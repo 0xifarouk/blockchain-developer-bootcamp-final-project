@@ -4,7 +4,7 @@
 [https://lucid-nightingale-900525.netlify.app/](https://lucid-nightingale-900525.netlify.app/)
 
 ## Address of Deoployed Contract on Ropsten Testnet
-[0x5aA59c6dC3E460f9835cc7B620B4D1aB2B30dAeF](hhttps://ropsten.etherscan.io/address/0x5aA59c6dC3E460f9835cc7B620B4D1aB2B30dAeF)
+[0x5aA59c6dC3E460f9835cc7B620B4D1aB2B30dAeF](https://ropsten.etherscan.io/address/0x5aA59c6dC3E460f9835cc7B620B4D1aB2B30dAeF)
 
 ## Screencast URL
 https://youtu.be/81KrjTRZLiw
