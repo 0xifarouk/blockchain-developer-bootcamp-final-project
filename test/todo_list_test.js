@@ -35,10 +35,34 @@ contract("TodoList", function (accounts) {
     const newTask = await todoListInstance.tasks(2)
 
     assert.equal(taskCount, 2)
-    assert.equal(newTask[0], 2)
-    assert.equal(newTask[1], "A new task to test")
-    assert.equal(newTask[2], false)
   })
+
+  it("task id is correct", async () => {
+    const todoListInstance = await TodoList.deployed()
+    const taskCount = await todoListInstance.taskCount()
+    const newTask = await todoListInstance.tasks(2)
+
+    assert.equal(taskCount, 2)
+    assert.equal(newTask[0], 2) // task id
+  })
+
+  it("task title is correct", async () => {
+    const todoListInstance = await TodoList.deployed()
+    const taskCount = await todoListInstance.taskCount()
+    const newTask = await todoListInstance.tasks(2)
+
+    assert.equal(newTask[1], "A new task to test") // task title
+    // assert.equal(newTask[2], false) // finished
+  })
+
+  it("task finished is correct", async () => {
+    const todoListInstance = await TodoList.deployed()
+    const taskCount = await todoListInstance.taskCount()
+    const newTask = await todoListInstance.tasks(2)
+
+    assert.equal(newTask[2], false) // finished
+  })
+
 
   it("toggles task finish", async () => {
     const todoListInstance = await TodoList.deployed()
@@ -46,18 +70,4 @@ contract("TodoList", function (accounts) {
     const task = await todoListInstance.tasks(1)
     assert.equal(task[2], true)
   })
-
-  it("toggles task finish from not owner", async () => {
-
-    const [owner, badUser] = accounts;
-    const todoListInstance = await TodoList.new({ from: owner })
-    try {
-      await todoListInstance.toggleFinished(1, { from: badUser })
-    } catch {
-
-    }
-    const task = await todoListInstance.tasks(1)
-    assert.equal(task[2], false)
-  })
-
 });
