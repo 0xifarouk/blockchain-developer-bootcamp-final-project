@@ -26,6 +26,7 @@ https://youtu.be/81KrjTRZLiw
 * run ```truffle test``` to run the tests
 
 ## Directory Structure
+* `build`: ABI files.
 * `src`: Project's frontend.
 * `contracts`: Soladity contracts code.
 * `migrations`: Migration files for deploying contracts.
