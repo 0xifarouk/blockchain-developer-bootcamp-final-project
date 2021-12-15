@@ -34,7 +34,7 @@ contract("TodoList", function (accounts) {
 
     const newTask = await todoListInstance.tasks(2)
 
-    assert.equal(taskCount, 2)
+    assert.equal(taskCount, 2) // task count
   })
 
   it("task id is correct", async () => {
@@ -42,7 +42,6 @@ contract("TodoList", function (accounts) {
     const taskCount = await todoListInstance.taskCount()
     const newTask = await todoListInstance.tasks(2)
 
-    assert.equal(taskCount, 2)
     assert.equal(newTask[0], 2) // task id
   })
 
@@ -52,7 +51,6 @@ contract("TodoList", function (accounts) {
     const newTask = await todoListInstance.tasks(2)
 
     assert.equal(newTask[1], "A new task to test") // task title
-    // assert.equal(newTask[2], false) // finished
   })
 
   it("task finished is correct", async () => {
